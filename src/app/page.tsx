@@ -1,7 +1,8 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import styled from 'styled-components';
 import {
   MainContainer,
   Label,
@@ -25,6 +26,25 @@ import { MdTouchApp } from 'react-icons/md';
 import { TbMathFunction } from 'react-icons/tb';
 
 const Globe = dynamic(() => import('../components/Globe'), { ssr: false });
+
+const AuthorsButton = styled.button`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #888;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #333;
+  }
+`;
 
 type StarData = {
   x: number;
@@ -51,9 +71,9 @@ const domeniiInformatica = [
 export default function Home() {
   const [stars, setStars] = useState<StarData[]>([]);
   const [positions, setPositions] = useState<{ x: number; y: number }[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
-    // Generare stele
     const generateStars = (count: number): StarData[] =>
       Array.from({ length: count }, () => ({
         x: Math.random() * 100,
@@ -63,7 +83,6 @@ export default function Home() {
       }));
     setStars(generateStars(120));
 
-    // Calculare poziții label-uri
     const radius = 410;
     const newPositions = domeniiInformatica.map((_, index) => {
       const angle = (index / domeniiInformatica.length) * 2 * Math.PI;
@@ -89,15 +108,57 @@ export default function Home() {
         ))}
       </StarsBackground>
       <Globe />
-      {positions.map((pos, index) => (
-        <Label
-  key={domeniiInformatica[index].nume}
-  x={pos.x}
-  y={pos.y}
+<Label
+  x={0}
+  y={0}
+  id="central-title"
+  style={{ fontSize: '1.8rem', fontWeight: 'bold', zIndex: 2 }}
 >
-  {domeniiInformatica[index].icon} {domeniiInformatica[index].nume}
+  Harta Informaticii
 </Label>
 
+      <AuthorsButton onClick={() => router.push('/AUTORI')}>
+        Autori
+      </AuthorsButton>
+
+      {positions.map((pos, index) => (
+        <Label
+          key={domeniiInformatica[index].nume}
+          x={pos.x}
+          y={pos.y}
+          onClick={() => {
+            const subject = domeniiInformatica[index].nume;
+            if (subject === 'Algoritmi și structuri de date') {
+              router.push('/ASD');
+            } else if (subject === 'Limbaje de programare') {
+              router.push('/LIMBAJE');
+            } else if (subject === 'Arhitectură') {
+              router.push('/ARH');
+            } else if (subject === 'Sisteme de operare și rețele') {
+              router.push('/SO');
+            } else if (subject === 'Inginerie software') {
+              router.push('/IS');
+            } else if (subject === 'Baze de date și regăsire de informații') {
+              router.push('/BAZEDATE');
+            } else if (subject === 'AI și robotică') {
+              router.push('/AI');
+            } else if (subject === 'Grafică') {
+              router.push('/GRAFICA');
+            } else if (subject === 'Interacțiune om-computer') {
+              router.push('/IOC');
+            } else if (subject === 'Știința computațională') {
+              router.push('/SC');
+            } else if (subject === 'Informatica organizațională') {
+              router.push('/IOR');
+            } else if (subject === 'Bioinformatică') {
+              router.push('/BIO');
+            } else {
+              router.push(`/subject/${encodeURIComponent(subject)}`);
+            }
+          }}
+        >
+          {domeniiInformatica[index].icon} {domeniiInformatica[index].nume}
+        </Label>
       ))}
     </MainContainer>
   );
