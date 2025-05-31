@@ -1,4 +1,5 @@
 'use client';
+
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -29,14 +30,14 @@ const Globe = dynamic(() => import('../components/Globe'), { ssr: false });
 
 const AuthorsButton = styled.button`
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   background-color: #1e1e1e;
   color: white;
   border: 1px solid #888;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   z-index: 1000;
   transition: background 0.3s;
@@ -69,11 +70,18 @@ const domeniiInformatica = [
 ];
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
   const [stars, setStars] = useState<StarData[]>([]);
   const [positions, setPositions] = useState<{ x: number; y: number }[]>([]);
   const router = useRouter();
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const generateStars = (count: number): StarData[] =>
       Array.from({ length: count }, () => ({
         x: Math.random() * 100,
@@ -83,7 +91,8 @@ export default function Home() {
       }));
     setStars(generateStars(120));
 
-    const radius = 410;
+    const screenWidth = window.innerWidth;
+    const radius = screenWidth < 1200 ? 420 : 340; // etichetele mai departe de glob
     const newPositions = domeniiInformatica.map((_, index) => {
       const angle = (index / domeniiInformatica.length) * 2 * Math.PI;
       return {
@@ -92,7 +101,9 @@ export default function Home() {
       };
     });
     setPositions(newPositions);
-  }, []);
+  }, [isClient]);
+
+  if (!isClient) return null;
 
   return (
     <MainContainer>
@@ -107,15 +118,17 @@ export default function Home() {
           />
         ))}
       </StarsBackground>
+
       <Globe />
-<Label
-  x={0}
-  y={0}
-  id="central-title"
-  style={{ fontSize: '1.8rem', fontWeight: 'bold', zIndex: 2 }}
->
-  Harta Informaticii
-</Label>
+
+      <Label
+        x={0}
+        y={0}
+        id="central-title"
+        style={{ fontSize: '1.6rem', fontWeight: 'bold', zIndex: 2 }}
+      >
+        Harta Informaticii
+      </Label>
 
       <AuthorsButton onClick={() => router.push('/AUTORI')}>
         Autori
@@ -126,38 +139,33 @@ export default function Home() {
           key={domeniiInformatica[index].nume}
           x={pos.x}
           y={pos.y}
+          style={{
+            fontSize: '0.75rem',
+            gap: '4px',
+            display: 'flex',
+            alignItems: 'center',
+          }}
           onClick={() => {
             const subject = domeniiInformatica[index].nume;
-            if (subject === 'Algoritmi și structuri de date') {
-              router.push('/ASD');
-            } else if (subject === 'Limbaje de programare') {
-              router.push('/LIMBAJE');
-            } else if (subject === 'Arhitectură') {
-              router.push('/ARH');
-            } else if (subject === 'Sisteme de operare și rețele') {
-              router.push('/SO');
-            } else if (subject === 'Inginerie software') {
-              router.push('/IS');
-            } else if (subject === 'Baze de date și regăsire de informații') {
-              router.push('/BAZEDATE');
-            } else if (subject === 'AI și robotică') {
-              router.push('/AI');
-            } else if (subject === 'Grafică') {
-              router.push('/GRAFICA');
-            } else if (subject === 'Interacțiune om-computer') {
-              router.push('/IOC');
-            } else if (subject === 'Știința computațională') {
-              router.push('/SC');
-            } else if (subject === 'Informatica organizațională') {
-              router.push('/IOR');
-            } else if (subject === 'Bioinformatică') {
-              router.push('/BIO');
-            } else {
-              router.push(`/subject/${encodeURIComponent(subject)}`);
-            }
+            const routes: Record<string, string> = {
+              'Algoritmi și structuri de date': '/ASD',
+              'Limbaje de programare': '/LIMBAJE',
+              'Arhitectură': '/ARH',
+              'Sisteme de operare și rețele': '/SO',
+              'Inginerie software': '/IS',
+              'Baze de date și regăsire de informații': '/BAZEDATE',
+              'AI și robotică': '/AI',
+              'Grafică': '/GRAFICA',
+              'Interacțiune om-computer': '/IOC',
+              'Știința computațională': '/SC',
+              'Informatica organizațională': '/IOR',
+              'Bioinformatică': '/BIO',
+            };
+            router.push(routes[subject] || `/subject/${encodeURIComponent(subject)}`);
           }}
         >
-          {domeniiInformatica[index].icon} {domeniiInformatica[index].nume}
+          <span style={{ fontSize: '1rem' }}>{domeniiInformatica[index].icon}</span>
+          {domeniiInformatica[index].nume}
         </Label>
       ))}
     </MainContainer>

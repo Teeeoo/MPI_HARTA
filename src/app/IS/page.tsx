@@ -16,7 +16,7 @@ const headings = [
   'Relații cu alte subdomenii',
   'Probleme importante și deschise',
   'Persoane importante',
-  'Foruri importante',
+  'Forumuri importante',
   'Dimensiune locală și globală',
 ];
 
