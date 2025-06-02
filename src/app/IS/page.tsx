@@ -42,7 +42,7 @@ const contentMap: Record<string, string[]> = {
     'Ian Sommerville – autorul cărții "Software Engineering".',
     'Kent Beck – fondator al metodologiilor XP și TDD.',
   ],
-  'Foruri importante': [
+  'Forumuri importante': [
     'IEEE Software Engineering Technical Council.',
     'ACM SIGSOFT (Special Interest Group on Software Engineering).',
     'Conferințele ICSE, FSE, ESEC.',

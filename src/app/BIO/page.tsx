@@ -16,17 +16,43 @@ const headings = [
   'Relații cu alte subdomenii',
   'Probleme importante și deschise',
   'Persoane importante',
-  'Foruri importante',
+  'Forumuri importante',
   'Dimensiune locală și globală',
 ];
 
 const contentMap: Record<string, string[]> = {
-  'Activități principale': [],
-  'Relații cu alte subdomenii': [],
-  'Probleme importante și deschise': [],
-  'Persoane importante': [],
-  'Foruri importante': [],
-  'Dimensiune locală și globală': [],
+  'Activități principale': 
+  ['Teorie: Fundamente teoretice și modele matematice utilizate pentru analiza informației biologice – alinierea secvențelor, modelarea rețelelor genetice, teoria informației genetice.'
+    ,'Experiment: Aplicarea metodelor computaționale pe seturi reale de date biologice – secvențiere ADN, expresie genică, simulări moleculare.'
+    ,'Design: Proiectarea bazelor de date biologice, a instrumentelor software pentru analiză genomică și a fluxurilor automate de procesare a datelor (pipelines).',
+  ],
+  'Relații cu alte subdomenii': [
+'Informatică: Algoritmi, structuri de date, inteligență artificială.',
+'Biologie moleculară: Date experimentale genomice și proteomice.',
+'Medicină: Genomică medicală și diagnostic molecular.',
+'Matematică și statistică: Biostatistică, modelare probabilistă.',
+  ],
+  'Probleme importante și deschise': [
+    'Analiza și interpretarea datelor genetice complexe.',
+    'Anotarea funcțională a genomului uman.',
+    'Scalabilitatea algoritmilor pentru big data biologic.',
+    'Integrarea datelor eterogene (genomic, clinic, proteic).',
+  ],
+  'Persoane importante': [
+'Margaret Oakley Dayhoff - Pionier al bioinformaticii, creatoarea matricii PAM. ',
+'Michael S. Waterman - Co-autor al algoritmului Smith-Waterman. ',
+  ],
+  'Forumuri importante': [
+    'Bioinformatics: https://academic.oup.com/bioinformatics',
+    'BMC Bioinformatics: https://bmcbioinformatics.biomedcentral.com',
+    'ISMB: https://www.iscb.org/ismbeccb2025',
+    'RECOMB: https://recomb.org'
+  ],
+  'Dimensiune locală și globală': [
+    'Programe de masterat Bioinformatică (UVT & UMFT), colaborări cu OncoGen și proiecte precum BCBHG.',
+    'Centre de excelență: EMBL-EBI, NCBI, Broad Institute.',
+    'Proiecte internaționale: Genomul Uman, ENCODE, Human Cell Atlas, 1000 Genomes.',
+  ],
 };
 
 type StarData = {
@@ -180,7 +206,7 @@ export default function BioinformaticsPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Bioinformatica este un domeniu interdisciplinar care integreaza informatica, biologia si matematica pentru a analiza si interpreta date biologice complexe, precum genomuri, proteine si retele celulare.']
+              ? ['Bioinformatica este un domeniu interdisciplinar care combină informatica, biologia și matematica pentru a analiza și interpreta date biologice, în special cele de natură genetică și moleculară. Scopul principal al bioinformaticii este de a înțelege procesele biologice complexe prin metode computaționale, utilizând algoritmi, baze de date și modele statistice. Aceasta are aplicații directe în diagnosticarea bolilor, dezvoltarea de tratamente, cercetarea cancerului și studierea evoluției speciilor. Bioinformatica face posibilă analiza unor cantități uriașe de date biologice - cum ar fi secvențele ADN - care ar fi imposibil de interpretat manual.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

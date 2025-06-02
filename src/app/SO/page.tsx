@@ -23,36 +23,36 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Teorie: Fundamente teoretice, modele formale, algoritmi și structuri de date pentru dezvoltarea software-ului sigur și performant',
-    'Experiment: Validarea metodelor prin experimente controlate și măsurători (ex: testarea eficienței metodologiilor Agile, DevOps, TDD)',
-    'Design: Proiectarea soluțiilor software la scară largă, arhitectură modulară, design centrat pe utilizator și mentenanță',
+    'Teorie: Fundamentele sistemelor de operare (gestionarea proceselor, memoriei, fișierelor, sistemelor de intrare/ieșire), modele de rețea (OSI, TCP/IP), protocoale (IP, TCP, UDP, HTTP).',
+    'Experiment: Testarea comportamentului planificatorilor de procese, simularea comunicației în rețele (folosind instrumente precum Wireshark, GNS3, Mininet), analizarea performanței rețelelor.',
+    'Design: Arhitectura sistemelor de operare (monolitic), configurarea firewall-urilor și a protocoalelor de rutare.',
   ],
   'Relații cu alte subdomenii': [
-    'Programare: Scrierea și organizarea codului, gestionarea complexității pe termen lung',
-    'Baze de date: Gestionarea volumului masiv de date',
-    'Rețele și sisteme distribuite: Conectivitatea și scalabilitatea aplicațiilor',
-    'Inteligență Artificială (AI): Integrarea AI în aplicații și automatizarea proceselor de dezvoltare',
+    'Securitate cibernetică: Protecția sistemelor de operare și a comunicațiilor de rețea împotriva atacurilor (buffer overflow, sniffing, spoofing).',
+    'Cloud computing: Sisteme de operare distribuite și virtualizare în centre de date.',
+    'Sisteme embedded: Sisteme de operare în timp real, comunicare prin rețele industriale.',
+    'Inteligență Artificială: Optimizarea alocării resurselor și monitorizarea traficului în rețea prin AI.',
   ],
   'Probleme importante și deschise': [
-    'Complexitatea și scalabilitatea sistemelor software',
-    'Calitatea, fiabilitatea și securitatea software-ului',
-    'Programarea asistată de AI: Unelte AI pentru generarea automată de cod',
-    'DevOps: Automatizare și livrare rapidă a aplicațiilor',
+    'Securitatea sistemelor de operare și rețelelor: Detecția și prevenirea atacurilor, gestionarea permisiunilor, izolare între procese.',
+    'Scalabilitatea și fiabilitatea rețelelor: Răspunsul în timp real, disponibilitatea ridicată, balansarea traficului.',
+    'Kerneluri reziliente: Cum putem construi sisteme de operare rezistente la atacuri zero-day sau coruperi de memorie?',
+    'Rețele deterministe: Ce soluții pot asigura predictibilitate și latență minimă pentru aplicații critice (vehicule autonome, robotică)?',
   ],
   'Persoane importante': [
-    'Ian Sommerville – autorul cărții "Software Engineering".',
-    'Kent Beck – fondator al metodologiilor XP și TDD.',
+    'Ken Thompson și Dennis Ritchie: Creatori ai sistemului UNIX - piatră de temelie pentru majoritatea sistemelor moderne.',
+    'Vinton Cerf: Considerat unul dintre „părinții Internetului”, co-creator al protocolului TCP/IP.',
   ],
-  'Foruri importante': [
-    'IEEE Software Engineering Technical Council.',
-    'ACM SIGSOFT (Special Interest Group on Software Engineering).',
-    'Conferințele ICSE, FSE, ESEC.',
+  'Forumuri importante': [
+    'IEEE Transactions on Network and Service Management https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206',
+    'USENIX Symposium on Operating Systems Design and Implementation (OSDI) https://www.usenix.org/conference/osdi23',
+    'IEEE INFOCOM https://infocom2024.ieee-infocom.org/',
   ],
   'Dimensiune locală și globală': [
-    'Florin Spătaru - Distributed Computing; Scheduling Algorithms; Blockchain',
-    'Cosmin Bonchiș - Information theory, Membrane computing, Parallel and distributed computing',
-    'Centre de excelență: Carnegie Mellon – SEI, ETH Zurich',
-    'Proiecte internaționale: „Software Engineering for AI-driven Systems”',
+    'Dr. Cristian Cira - Lector la FMI, cu preocupări în rețele descentralizate, guvernanță automatizată și tehnologia blockchain.',
+    'Dr. Adrian Spătaru - Lector la FMI este specializat în calcul distribuit și paralel, cu accent pe tehnologia blockchain, cloud computing și machine learning.',
+    'Centre de excelență: MIT CSAIL, Stanford Networking Lab, ETH Zurich.',
+    'Proiecte internaționale: Horizon Europe - Rețele 6G, proiecte open-source pentru kerneluri sigure (ex: seL4).',
   ],
 };
 
@@ -212,7 +212,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Ingineria software este ramura informaticii care se ocupă cu proiectarea și dezvoltarea de programe și sisteme software de mare anvergură astfel încât acestea să respecte specificațiile și să fie sigure, securizate, fiabile și de încredere. Pentru a atinge aceste obiective, ingineria software îmbină fundamente teoretice, metode experimentale și practici de design inginerești.']
+              ? ['Sisteme de operare și rețele este un subdomeniu esențial al informaticii care se ocupă cu studiul mecanismelor de control al resurselor hardware și al comunicației între calculatoare. Sisteme de operare moderne, precum Linux, Windows sau macOS, asigură o interfață între utilizator și hardware, gestionând procese, memorie, fișiere și dispozitive. Rețelele de calculatoare permit schimbul de date între dispozitive, fiind fundamentul comunicației globale (Internet, cloud computing, rețele locale etc.). Împreună, aceste două componente asigură funcționarea sistemelor informatice complexe și interconectate.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

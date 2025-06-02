@@ -22,36 +22,36 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Teorie: Fundamente teoretice, modele formale, algoritmi și structuri de date pentru dezvoltarea software-ului sigur și performant',
-    'Experiment: Validarea metodelor prin experimente controlate și măsurători (ex: testarea eficienței metodologiilor Agile, DevOps, TDD)',
-    'Design: Proiectarea soluțiilor software la scară largă, arhitectură modulară, design centrat pe utilizator și mentenanță',
+    'Teorie: Algoritmii și structurile de date sunt fundamente ale informaticii, studiate pentru eficiență, corectitudine și organizarea datelor.',
+    'Experiment: Algoritmii sunt testați pe date diverse pentru a evalua performanța în practică, folosind limbaje ca Python, C++ sau Java.',
+    'Design: Proiectarea implică alegerea strategiilor și structurilor potrivite pentru probleme precum sortarea, căutarea sau procesarea grafurilor.',
   ],
   'Relații cu alte subdomenii': [
-    'Programare: Scrierea și organizarea codului, gestionarea complexității pe termen lung',
-    'Baze de date: Gestionarea volumului masiv de date',
-    'Rețele și sisteme distribuite: Conectivitatea și scalabilitatea aplicațiilor',
-    'Inteligență Artificială (AI): Integrarea AI în aplicații și automatizarea proceselor de dezvoltare',
+    'Inteligență Artificială – aplicabilitate comună: Algoritmii sunt esențiali în AI pentru antrenarea modelelor, optimizare sau căutare.',
+    'Securitate cibernetică – dependentă: Criptografia se bazează pe algoritmi și structuri eficiente (ex: arbori Merkle, tabele hash).',
+    'Programare – influență directă: Structurile de date și algoritmii influențează direct performanța aplicațiilor software.',
   ],
   'Probleme importante și deschise': [
-    'Complexitatea și scalabilitatea sistemelor software',
-    'Calitatea, fiabilitatea și securitatea software-ului',
-    'Programarea asistată de AI: Unelte AI pentru generarea automată de cod',
-    'DevOps: Automatizare și livrare rapidă a aplicațiilor',
+    'Sortarea eficientă: Problema centrală în informatică. Deși există algoritmi optimi, alegerea corectă în funcție de context este esențială.',
+    'Algoritmi pe grafuri: Probleme precum cel mai scurt drum sau fluxul maxim au aplicații majore în rețele și optimizări.',
+    'Algoritmi sub-liniari: Se dezvoltă algoritmi care nu parcurg toate datele, utili în streaming, dar cu limitări de acuratețe.',
+    'Algoritmi cuantici: Promițători, dar greu de implementat larg din cauza limitărilor tehnice actuale.',
   ],
   'Persoane importante': [
-    'Ian Sommerville – autorul cărții "Software Engineering".',
-    'Kent Beck – fondator al metodologiilor XP și TDD.',
+    'Donald Knuth: Stanford University – autorul seriei The Art of Computer Programming. https://www-cs-faculty.stanford.edu/~knuth/ ',
+    'Robert Tarjan: Princeton University – cunoscut pentru algoritmi eficienți pentru grafuri. https://www.cs.princeton.edu/~ret/ ',
   ],
-  'Foruri importante': [
-    'IEEE Software Engineering Technical Council.',
-    'ACM SIGSOFT (Special Interest Group on Software Engineering).',
-    'Conferințele ICSE, FSE, ESEC.',
+  'Forumuri importante': [
+    'Journal of Algorithms: https://www.sciencedirect.com/journal/journal-of-algorithms',
+    'ACM Transactions on Algorithms (TALG): https://dl.acm.org/journal/talg',
+    'STOC (Symposium on Theory of Computing): https://acm-stoc.org/stoc2025/',
+    'ICALP (International Colloquium on Automata, Languages, and Programming): https://conferences.au.dk/icalp2025',
   ],
   'Dimensiune locală și globală': [
-    'Florin Spătaru - Distributed Computing; Scheduling Algorithms; Blockchain',
-    'Cosmin Bonchiș - Information theory, Membrane computing, Parallel and distributed computing',
-    'Centre de excelență: Carnegie Mellon – SEI, ETH Zurich',
-    'Proiecte internaționale: „Software Engineering for AI-driven Systems”',
+    'Lector. Dr. Adrian Spătaru - Proiect CoCo: "Adaptivity in the Cloud to Edge Continuum" -Angajat in cadrul proiectului "Dinamica norilor pe sisteme cloud pentru predicția generării energie fotovoltaice". In cadrul acestui proiect am contribuit la inbunatatirea performanței unor algoritmi de predicție a dinamicii norilor prin paralelizarea algoritmilor folosind placi grafice. Algoritmii sunt impachetati in imagini Container, care sunt executate folosind infrastructura Cloud.',
+    'Conf. Dr. Cosmin Bonchiș - Theoretical computer science research: Information Theory, Optimisation Algorithms, Membrane computing',
+    'Centre de excelență: MIT (CSAIL), ETH Zürich (Institute of Theoretical Computer Science).',
+    'Proiecte internaționale: COST Action „Algorithms and Complexity” – colaborări în cercetarea algoritmilor eficienți.',
   ],
 };
 
@@ -207,7 +207,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Algoritmii și structurile de date reprezintă fundamentul dezvoltării software eficiente și scalabile. Acest domeniu se concentrează pe conceperea de proceduri pas cu pas (algoritmi) pentru rezolvarea problemelor, alături de metode eficiente de organizare și accesare a datelor (structuri de date). Printre conceptele centrale se numără sortarea, căutarea, grafurile, arborii, listele, stivele și cozile, iar aplicațiile lor se regăsesc în toate ramurile informaticii, de la inteligență artificială la baze de date și rețelistică.']
+              ? ['Algoritmi și structuri de date este un domeniu esențial în informatică care studiază metode eficiente de rezolvare a problemelor (algoritmi) și moduri optimizate de organizare a datelor (structuri de date). Scopul este de a realiza operații rapide (căutare, sortare, modificare) cu consum minim de resurse (timp, memorie). Exemple cheie: quicksort, arbori binari, grafuri și tabele hash.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

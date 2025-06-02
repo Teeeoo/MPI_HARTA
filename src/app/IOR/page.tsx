@@ -24,31 +24,36 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activitati principale': [
-    'Managementul informatiei si proceselor organizationale',
-    'Automatizarea sarcinilor repetitive prin sisteme informatice',
-    'Planificarea si coordonarea resurselor in cadrul unei organizatii',
+    'Teorie: Studiază modul de organizare, funcționare și informatizare a proceselor organizaționale. Include arhitecturi informaționale, fluxuri de date, ERP, BPM, analiza proceselor',
+    'Experiment: Se utilizează modelarea proceselor organizaționale, simulări informatice, studii de caz, testarea sistemelor ERP, evaluarea performanței IT la nivel organizațional.',
+    'Design: Se proiectează soluții informatice (ERP,CRM, BI), arhitecturi de sistem, fluxuri de lucru automatizate și politici de guvernanță IT.',
   ],
   'Relatii cu alte subdomenii': [
-    'Baze de date: pentru stocarea informatiilor esentiale',
-    'Retele: pentru comunicarea eficienta a datelor',
-    'Sisteme distribuite: integrarea diverselor sisteme intr-un cadru comun',
+    'Ingineria software - Aplicații comune - Se implementează soluții software specifice organizațiilor (ERP, CRM etc).',
+    'Inteligența artificială - Influență - AI este folosită pentru automatizarea deciziilor organizaționale (ex: roboți RPA, analiza predictivă).',
+    'Securitate cibernetică - Dependență - Protejarea datelor și infrastructurii este critică pentru funcționarea organizațională modernă.',
   ],
   'Probleme importante si deschise': [
-    'Integrarea eficienta a diferitelor tehnologii IT in organizatii',
-    'Securitatea datelor in sisteme complexe',
-    'Adaptabilitatea sistemelor informatice la schimbarile organizationale',
+    'Integrarea sistemelor: Dificultăți tehnice și de compatibilitate între sisteme ERP/CRM diferite.',
+    'Adoptarea soluțiilor IT: Rezistență organizațională, lipsa competențelor digitale',
+    'Securitate și confidențialitate: Acces neautorizat la date sensibile, lipsa auditului IT.',
+    'Optimizarea fluxurilor prin AI: Complexitatea ridicată a proceselor face dificilă automatizarea completă.',
+    'Guvernanța IT în organizații hibride: Dificultăți de adaptare a politicilor între cloud, onpremise și telemuncă.',
+    'Etica și transparența deciziilor IT: Cum garantăm decizii corecte în sisteme automatizate?',
   ],
   'Persoane importante': [
-    'Thomas H. Davenport – expert in informatica organizationala',
-    'Peter Drucker – pionier in managementul modern',
+    'Thomas H. Davenport - Babson College (SUA) - Pionier în analiza afacerilor, automatizare, ERP.',
+    'August-Wilhelm Scheer - IDS Scheer AG (Germania) - Creatorul ARIS, modelare a proceselor organizaționale.',
   ],
   'Forumuri importante': [
-    'AIS (Association for Information Systems)',
-    'Conferinta ICIS (International Conference on Information Systems)',
+    'Journal of Organizational Computing and Electronic Commerce - https://www.tandfonline.com/loi/hoce20',
+    'Information Systems Journal - https://onlinelibrary.wiley.com/journal/13652575 ',
   ],
   'Dimensiune locala si globala': [
-    'Aplicatii in sectorul public si privat din Romania',
-    'Exemple internationale: SAP, Oracle, Microsoft Dynamics',
+    'Cercetători activi: Conf. dr. Radu Vasiu, Conf. dr. Silviu Vert (cercetări în e-guvernare, digitalizare instituțională)',
+    'Proiecte: e-Society (transformare digitală în administrație), SmartGov (servicii publice inteligente)',
+    'Centre de excelență: MIT (Center for Information Systems Research), Fraunhofer IESE (Germania)',
+    'Proiecte internaționale: DIGITbrain (cloud computing în industrie), InteropEHRate (schimb de date organizaționale în e-sănătate)',
   ],
 };
 
@@ -103,7 +108,7 @@ const SideDropdown = styled(motion.div)<{ side: 'left' | 'right' }>`
 
 export default function SubjectPage() {
   const params = useParams();
-  const subject = params?.subject ? decodeURIComponent(params.subject as string) : 'Informatica Organizationala';
+  const subject = params?.subject ? decodeURIComponent(params.subject as string) : 'Informatica Organizațională';
 
   const [isClient, setIsClient] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -210,7 +215,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Informatica organizationala studiaza procesele si sistemele informatice utilizate in organizatii pentru a sprijini deciziile si eficienta.']
+              ? ['Informatica organizațională este un domeniu interdisciplinar care studiază modul în care tehnologia informației este utilizată pentru a sprijini, automatiza și îmbunătăți procesele din cadrul organizațiilor. Ea integrează concepte din informatică, științele economice și management, având ca scop crearea și implementarea de sisteme informatice eficiente (precum ERP, CRM, BI) care optimizează activitatea internă, comunicarea, luarea deciziilor și relația cu clienții sau partenerii. Informatica organizațională contribuie semnificativ la transformarea digitală, fiind esențială în adaptarea organizațiilor la mediul competitiv și la schimbările rapide ale pieței.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li
