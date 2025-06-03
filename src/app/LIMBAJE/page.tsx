@@ -15,51 +15,51 @@ import {
 const CanvasBackground = dynamic(() => import('@/components/CanvasBackground'), { ssr: false });
 
 const headings = [
-  'Paradigme de programare',
-  'Limbaje populare și utilizări',
-  'Evoluția limbajelor',
-  'Transpiling și compilare',
-  'Frameworkuri și ecosisteme',
-  'Performanță și optimizare',
+  'Activități principale',
+  'Relații cu alte subdomenii',
+  'Probleme importante și deschise',
+  'Persoane importante',
+  'Forumuri importante',
+  'Dimensiune locală și globală',
 ];
 
 const contentMap: Record<string, string[]> = {
-  'Paradigme de programare': [
-    'Imperativ: C, Pascal — se bazează pe instrucțiuni pas cu pas.',
-    'Funcțional: Haskell, Lisp — funcții pure și imutabilitate.',
-    'OOP: Java, C++ — structurat pe clase și obiecte.',
-    'Logica: Prolog — bazat pe reguli și fapte logice.',
+  'Activități principale': [
+    'Teorie: Fundamente ale limbajelor formale, gramatici, autómate, paradigme de programare (imperativă, funcțională, logică, orientată pe obiect), sisteme de tipuri.',
+    'Experiment: Proiectarea și implementarea de interpretoare, compilatoare, analiză statică și dinamică a codului, benchmarking al performanței limbajelor.',
+    'Design: Crearea și evaluarea de noi limbaje de programare, DSL-uri (domain-specific languages), mecanisme de extensie și interoperabilitate între limbaje.',
   ],
-  'Limbaje populare și utilizări': [
-    'JavaScript — web front-end & back-end.',
-    'Python — AI, scripting, educație.',
-    'Java — aplicații enterprise, Android.',
-    'C/C++ — sisteme, embedded, jocuri.',
-    'Rust & Go — performanță și siguranță.',
+  'Relații cu alte subdomenii': [
+    'Compilatoare: Analiza lexicală, sintactică și semantică a limbajelor, optimizări și generare de cod.',
+    'Programare: Influențarea stilului și structurii codului prin alegerea limbajului.',
+    'Sisteme distribuite și concurente: Limbaje specializate pentru programare paralelă/concurentă (ex: Erlang, Go).',
+    'Inteligență Artificială: Utilizarea limbajelor simbolice (ex: Lisp, Prolog) pentru modelare logică și reprezentare a cunoștințelor.',
   ],
-  'Evoluția limbajelor': [
-    '1950-1970: limbaje simple (Fortran, Lisp).',
-    '1980-1990: orientarea pe obiecte (C++, Java).',
-    '2000+: scripting și interpretare (Python, JS).',
-    '2020+: siguranță, paralelism, web-native (Rust, TypeScript).',
+  'Probleme importante și deschise': [
+    'Formalizarea semanticii limbajelor și verificarea corectitudinii programelor',
+    'Performanța și portabilitatea între platforme',
+    'Designul de limbaje expresive dar sigure și ușor de învățat',
+    'Integrarea paradigmelor multiple într-un singur limbaj',
+    'Limbaje pentru programare sigură și verificabilă formal',
+    'Automatizarea traducerii între limbaje diferite',
   ],
-  'Transpiling și compilare': [
-    'Compilare: cod sursă → cod mașină (ex: C, Rust).',
-    'Interpretare: linie cu linie (ex: Python).',
-    'Transpiling: TypeScript → JavaScript, Babel, Webpack.',
-    'JIT (Just-in-Time): Java, V8 — performanță hibridă.',
+  'Persoane importante': [
+    'John Backus - Creatorul limbajului FORTRAN și a formei BNF (Backus-Naur Form)',
+    'Alan Kay - Pionier al programării orientate pe obiect, creatorul limbajului Smalltalk',
+    'Bjarne Stroustrup - Creatorul limbajului C++',
+    'Guido van Rossum - Creatorul limbajului Python',
   ],
-  'Frameworkuri și ecosisteme': [
-    'JavaScript: React, Vue, Angular.',
-    'Python: Django, Flask, FastAPI.',
-    'Java: Spring, Jakarta EE.',
-    'C#: .NET, Blazor.',
+  'Forumuri importante': [
+    'Stack Overflow - Cea mai populară comunitate pentru întrebări și răspunsuri legate de limbaje de programare',
+    'Reddit (ex: r/ProgrammingLanguages, r/learnprogramming) - Discuții, tutoriale și resurse comunitare',
+    'GitHub Discussions - Spațiu colaborativ pentru proiecte open-source, inclusiv limbaje și compilatoare',
+    'Lambda the Ultimate - Forum academic și tehnic axat pe teoria limbajelor de programare',
+    'Hacker News - Noutăți și discuții legate de dezvoltarea de limbaje și tehnologii noi'
   ],
-  'Performanță și optimizare': [
-    'Managementul memoriei (GC vs manual).',
-    'Paralelism: multithreading, async/await.',
-    'Optimizări de compilator.',
-    'Benchmarking și profiling.',
+  'Dimensiune locală și globală': [
+    'Cosmin Bonchiș - Cercetări în limbaje de programare, sisteme de tipuri, compilatoare și traducere între limbaje',
+    'Centre de excelență: MIT (CSAIL), Stanford, University of Cambridge',
+    'Proiecte internaționale: LLVM Project, Racket, Haskell Platform, WebAssembly',
   ],
 };
 
@@ -204,7 +204,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Limbajele de programare reprezintă unelte esențiale prin care oamenii pot comunica cu sistemele de calcul. Ele pot varia în paradigme, scop, nivel de abstractizare și eficiență. Înțelegerea lor este fundamentală pentru dezvoltatori și ingineri software.']
+              ? ['Limbajele de programare reprezintă o ramură fundamentală a informaticii care se ocupă cu studiul, proiectarea, implementarea și analiza limbajelor utilizate pentru a instrui calculatoarele. Ele formează puntea între conceptele teoretice și aplicațiile practice, permițând exprimarea clară, concisă și sigură a algoritmilor. Studiul limbajelor de programare contribuie esențial la scrierea de cod eficient, portabil, scalabil și ușor de întreținut.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

@@ -23,33 +23,42 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Stabilirea arhitecturii hardware/software a sistemelor',
-    'Definirea componentelor modulare și interfețelor lor',
-    'Alegerea pattern-urilor arhitecturale potrivite (ex: MVC, Microservicii)',
+    'Teorie: Fundamentele arhitecturii Von Neumann, modelele RISC/CISC, structura procesorului, memoriei și magistralelor; conceptele de paralelism, pipelining și arhitecturi hibride.',
+    'Experiment: Analiza performanței procesoarelor, compararea arhitecturilor hardware/software prin simulări, utilizarea microserviciilor în aplicații cloud și testarea scalabilității acestora.',
+    'Design: Proiectarea de sisteme la scară mare: calculatoare, servere, arhitecturi distribuite (cloud); organizarea logică a aplicațiilor (monolitice, microservicii); alegerea modelelor optime pentru eficiență și mentenanță.',
   ],
   'Relații cu alte subdomenii': [
-    'Inginerie Software: Proiectarea sistemelor',
-    'Sisteme de Operare: Managementul resurselor hardware',
-    'Rețele: Arhitecturi distribuite și comunicație între componente',
+    'Sisteme de operare - gestionează resursele definite de arhitectura hardware.',
+    'Programare - influențată de tipul arhitecturii (RISC vs CISC).',
+    'Rețele - esențiale pentru microservicii și aplicații distribuite.',
+    'AI - folosește arhitecturi specializate (GPU, TPU).',
+    'Securitate - afectată de modul în care sistemul e proiectat.'
+
   ],
   'Probleme importante și deschise': [
-    'Scalabilitatea arhitecturilor moderne',
-    'Securitatea în arhitecturile distribuite',
-    'Optimizarea performanței fără a compromite modularitatea',
+    'Blocajul Von Neumann: accesul unic la memorie încetinește procesorul.',
+    'Complexitatea microserviciilor: necesită instrumente speciale pentru coordonare și securitate.',
+    'RISC vs CISC: o	RISC: instrucțiuni simple, rapide (ex: ARM). o	CISC: instrucțiuni complexe, versatile (ex: x86).',
+    'Întrebare cheie: Cum poate arhitectura unui sistem să influențeze performanța, mentenanța și scalabilitatea aplicațiilor?',
   ],
   'Persoane importante': [
-    'Mary Shaw – pionier în arhitectura software',
-    'Grady Booch – autor al metodei Booch și co-creator UML',
+    'John von Neumann - Fondatorul arhitecturii moderne a calculatoarelor.',
+    'David Patterson & John Hennessy - Pionieri ai arhitecturii RISC.',
+    'Alan Kay - Inițiator al arhitecturii software moderne și al OOP.'
   ],
   'Forumuri importante': [
-    'IEEE Software Architecture Conferences',
-    'ACM SIGSOFT – Software Architecture Track',
-    'SATURN Conference',
+    'IEEE Transactions on Computers: computer.org',
+    'Journal of Systems Architecture: Elsevier',
+    'ISCA, ICSE, Hot Chips - Conferințe internaționale de top',
+    'Patterson & Hennessy - Computer Organization and Design',
+    'Tanenbaum - Structured Computer Organization',
+    'Wikipedia - Von Neumann architecture'
   ],
   'Dimensiune locală și globală': [
-    'Cercetare în arhitecturi scalabile la UVT',
-    'Colaborări internaționale cu centre precum Carnegie Mellon',
-    'Impactul arhitecturii software în industrie (cloud, edge, AI)',
+    'Florin Spătaru - Arhitecturi distribuite, algoritmi de planificare',
+    'Cosmin Bonchiș - Calcul paralel, arhitecturi neconvenționale',
+    'Carnegie Mellon, ETH Zürich - Centre de cercetare de top',
+    'Proiecte internaționale: Arhitecturi pentru AI și cloud computing'
   ],
 };
 
@@ -205,7 +214,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Arhitectura în informatică se referă la organizarea structurală a componentelor unui sistem software sau hardware. Ea stabilește modul în care componentele interacționează între ele și cu mediul înconjurător. O arhitectură bine definită asigură scalabilitatea, mentenanța, performanța și securitatea sistemului.']
+              ? ['Arhitectura reprezintă modul în care sunt organizate componentele hardware și software ale unui sistem informatic. Ea definește structura și funcționarea sistemelor, de la calculatoare personale la aplicații distribuite în cloud.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

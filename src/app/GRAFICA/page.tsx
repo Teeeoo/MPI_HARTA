@@ -16,7 +16,7 @@ const headings = [
   'Relații cu alte subdomenii',
   'Probleme importante și deschise',
   'Persoane importante',
-  'Foruri importante',
+  'Forumuri importante',
   'Dimensiune locală și globală',
 ];
 
@@ -25,7 +25,7 @@ const contentMap: Record<string, string[]> = {
   'Relații cu alte subdomenii': [],
   'Probleme importante și deschise': [],
   'Persoane importante': [],
-  'Foruri importante': [],
+  'Forumuri importante': [],
   'Dimensiune locală și globală': [],
 };
 

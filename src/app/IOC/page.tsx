@@ -22,21 +22,50 @@ const headings = [
   'Relații cu alte subdomenii',
   'Probleme importante și deschise',
   'Persoane importante',
-  'Foruri importante',
+  'Forumuri importante',
   'Dimensiune locală și globală',
 ];
 
 const contentMap: Record<string, string[]> = {
   [centerHeading]: [
-    'Interacțiunea om-computer studiază modul în care oamenii interacționează cu tehnologia.',
-    'Scopul este proiectarea unor interfețe intuitive, eficiente și accesibile.',
+    'Interacțiunea om–computer (HCI) este un domeniu care analizează modul în care oamenii interacționează cu tehnologia. Scopul său este de a îmbunătăți utilizarea sistemelor digitale prin interfețe intuitive, accesibile și adaptate nevoilor reale ale utilizatorilor.',
   ],
-  'Activități principale': [],
-  'Relații cu alte subdomenii': [],
-  'Probleme importante și deschise': [],
-  'Persoane importante': [],
-  'Foruri importante': [],
-  'Dimensiune locală și globală': [],
+  'Activități principale': ['Teorie: Interacțiunea om–computer (HCI) studiază modul în care utilizatorii folosesc sistemele informatice, punând accent pe ușurința utilizării, adaptarea pentru confortul utilizatorului, felul în care aceștia înțeleg și interpretează informațiile, precum și pe designul orientat spre nevoile utilizatorului.',
+    'Experiment: Testele de utilizabilitate și experimentele UX (User Experience) implică metode precum eye-tracking, interviuri, A/B testing sau simulări de interacțiune. Se folosesc prototipuri interactive dezvoltate în medii precum Figma, Unity sau aplicații web.',
+    'Design: Se dezvoltă interfețe grafice, sisteme conversaționale (chatboți), aplicații mobile și tehnologii moderne (VR/AR) prin metode iterative, implicând feedbackul continuu al utilizatorilor.',
+
+  ],
+  
+  'Relații cu alte subdomenii': [
+    'Inteligență Artificială - colaborare activă: Chatboții, asistenții vocali (ex. Siri, Alexa) și sistemele de recomandare se bazează pe HCI pentru a oferi interfețe intuitive.',
+    'Psihologie cognitivă - interdependență: Înțelegerea proceselor mentale este esențială pentru a proiecta interfețe adaptate capacităților și limitărilor umane.',
+    'Dezvoltare software - influență practică: O aplicație bine proiectată din punct de vedere HCI îmbunătățește experiența utilizatorului, eficiența și accesibilitatea.',
+  ],
+  'Probleme importante și deschise': [
+    'Accesibilitatea digitală: Proiectarea aplicațiilor pentru persoane cu dizabilități este esențială într-o societate incluzivă.',
+    'Ergonomia interfețelor: Maximizarea eficienței și reducerea erorilor în interacțiunea cu sistemele digitale.',
+    'Interacțiunea în realitate augmentată și virtuală: Crearea unor modele naturale de interacțiune pentru medii 3D este un domeniu activ de cercetare.',
+    'Etica și impactul tehnologiei: Cum influențează interacțiunea om-computer comportamentele și sănătatea mintală?',
+  ],
+  'Persoane importante': [
+    'Ben Shneiderman - University of Maryland - pionier în HCI, creatorul modelului direct manipulation https://www.cs.umd.edu/people/ben',
+    'Don Norman - fost director al Apple Research - autorul cărții The Design of Everyday Things https://jnd.org',
+  ],
+  'Forumuri importante': [
+    'Human-Computer Interaction - https://www.tandfonline.com/journals/hhci20',
+    'ACM Transactions on Computer-Human Interaction (TOCHI) - https://tochi.acm.org',
+    'CHI (Conference on Human Factors in Computing Systems) - https://chi2025.acm.org',
+    'UIST (User Interface Software and Technology) - https://uist.acm.org'
+  ],
+  'Dimensiune locală și globală': [
+    'Lect. Dr. Liviu Octavian Mafteiu-Scai - Coordonează echipe de studenți în cadrul Concursului de Informatică Ștefan Mărușter și participă la dezvoltarea de aplicații interactive. Este implicat în cercetări privind algoritmi metaeuristici și optimizarea interfețelor utilizator.',
+    'Lect. Dr. Cosmin Bonchiș - Specializat în grafică și interfețe utilizator, contribuie la proiecte interdisciplinare axate pe interacțiunea om-calculator și educație asistată digital. A fost implicat în dezvoltarea unui simulator web pentru sisteme P.',
+    'MIT Media Lab - cercetare de vârf în interfețe inovatoare și experiențe interactive.',
+    'Carnegie Mellon University - HCI Institute - unul dintre cele mai prestigioase centre de cercetare din lume.',
+    'Horizon Europe: Augmented Reality for Smart Education.',
+    'W3C - Web Accessibility Initiative (WAI): standarde globale pentru accesibilitate.'
+
+  ],
 };
 
 const Line = styled.div<{ x: number; y: number }>`

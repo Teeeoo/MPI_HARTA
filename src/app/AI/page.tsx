@@ -9,7 +9,7 @@ import {
   Star,
   StarsBackground,
 } from '@/components/styled';
-import Robot from '@/components/Robot'; // înlocuit Ring3D cu Robot
+import Robot from '@/components/Robot';
 
 const headings = [
   'Activități principale',
@@ -22,38 +22,41 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Roboți industriali: asamblare, sudare, manipulare materiale',
-    'AI: algoritmi de învățare automată pentru recunoaștere de imagine și vorbire',
-    'Roboți mobili: navigare autonomă, evitarea obstacolelor, planificare trasee',
-    'Procesare limbaj natural: interacțiune uman-robot prin voce sau text',
+    'Teorie: Fundamentele matematice și algoritmice ale învățării automate, rețelelor neuronale, planificării automate și percepției.',
+    'Experiment: Validarea algoritmilor AI prin seturi de date reale și simulări (ex: recunoaștere facială, procesare limbaj natural).',
+    'Design: Proiectarea roboților inteligenți cu senzori, actuatori, control autonom și integrarea AI în luarea deciziilor în timp real.',
+
   ],
   'Relații cu alte subdomenii': [
-    'Informatică: algoritmi, programare, sisteme distribuite',
-    'Inginerie electrică: senzori, actuatori, control',
-    'Mecatronică: design fizic și mecanică a roboților',
-    'Psihologie cognitivă: modelarea comportamentului uman',
+    'Informatică teoretică: Modele formale de raționament și învățare automată.  ',
+    'Procesare imagini și semnale: Utilizate în percepția robotică.',
+    'Internet of Things (IoT): Interconectarea roboților și sistemelor inteligente.',
+    'Etică și securitate cibernetică: Asigurarea utilizării sigure și corecte a sistemelor AI autonome.',
   ],
   'Probleme importante și deschise': [
-    'Etică în AI: decizii autonome responsabile',
-    'Inteligență generală: crearea de agenți versatili',
-    'Securitate și confidențialitate în interacțiunea AI cu utilizatori',
-    'Comunicare naturală și empatie între AI și om',
+    'Controlul și explicabilitatea sistemelor AI autonome',
+    'Integrarea sigură a roboților în medii sociale și industriale',
+    'Generalizarea în învățarea automată (robustețea modelelor AI)',
+    'Conștiința și înțelegerea în AI',
+    'Roboți sociali empatici',
+    'Reglementarea etică și juridică a utilizării AI și roboticii',
   ],
   'Persoane importante': [
-    'Rodney Brooks – fondator iRobot, cercetător în AI și robotică',
-    'Fei-Fei Li – expertă în viziune computerizată și AI',
-    'Yoshua Bengio – pionier în învățarea profundă (Deep Learning)',
+    'Yoshua Bengio - Cercetător în deep learning, câștigător al Premiului Turing',
+    'Rodney Brooks - Fondator al companiei iRobot, pionier în robotica comportamentală',
   ],
-  'Foruri importante': [
-    'Conferințe: ICRA, NeurIPS, AAAI, IJCAI',
-    'Jurnale: Robotics and Autonomous Systems, AI Magazine',
-    'Organizații: OpenAI, DeepMind, IEEE Robotics & Automation Society',
+  'Forumuri importante': [
+    'Artificial Intelligence Journal: https://www.journals.elsevier.com/artificial-intelligence',
+    'Robotics and Autonomous Systems: https://www.journals.elsevier.com/robotics-and-autonomous-systems',
+    'AAAI Conference on Artificial Intelligence: https://aaai.org',
+    'ICRA - IEEE International Conference on Robotics and Automation: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra',
   ],
   'Dimensiune locală și globală': [
-    'UVT – proiecte în robotică educațională și AI aplicat în sănătate',
-    'MIT, Stanford – lideri în cercetare robotică și AI',
-    'UE și SUA – investiții masive în tehnologii AI și roboți',
-    'Aplicații globale: agricultură, logistică, sănătate, educație',
+    'Prof. Dr. Cosmin Bonchiș - Robotică autonomă, Sisteme embedded și IoT, Inteligență artificială distribuită',
+    'Dr. Horia Popa -  Sisteme embedded pentru roboți',
+    'Prof. Dr. Daniela Zaharie - Învățare optimizată (Machine learning), Neural Network',
+    'Centre de excelență: MIT CSAIL, Stanford AI Lab, ETH Zurich AI Center',
+    'Proiecte internaționale: „Human-Centered AI”, „Robotics for Elderly Care”'
   ],
 };
 
@@ -209,7 +212,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['AI și Robotica se ocupă cu dezvoltarea de agenți inteligenți și mașini autonome capabile să perceapă, să gândească și să acționeze în medii reale sau simulate. Aceste domenii combină învățarea automată, procesarea limbajului, percepția și mecanica pentru a crea sisteme inteligente.']
+              ? ['Inteligența artificială (AI) și robotica reprezintă două ramuri esențiale ale informaticii moderne, având un impact major asupra industriei, cercetării și societății. AI se ocupă cu dezvoltarea de algoritmi și sisteme care pot simula inteligența umană, iar robotica integrează AI pentru a crea sisteme autonome capabile să interacționeze cu mediul fizic. Împreună, aceste domenii permit automatizarea sarcinilor complexe, creșterea eficienței și dezvoltarea de soluții inteligente în diverse domenii.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li
