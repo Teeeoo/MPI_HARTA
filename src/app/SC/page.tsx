@@ -9,7 +9,7 @@ import {
   Star,
   StarsBackground,
 } from '@/components/styled';
-import MobiusStrip3D from '@/components/MobiusStrip3D'; // ✅ înlocuire
+import MobiusStrip3D from '@/components/MobiusStrip3D';
 
 const headings = [
   'Activități principale',
@@ -22,36 +22,40 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Teorie: Fundamente teoretice, modele formale, algoritmi și structuri de date pentru dezvoltarea software-ului sigur și performant',
-    'Experiment: Validarea metodelor prin experimente controlate și măsurători (ex: testarea eficienței metodologiilor Agile, DevOps, TDD)',
-    'Design: Proiectarea soluțiilor software la scară largă, arhitectură modulară, design centrat pe utilizator și mentenanță',
+    'Teorie: Analiză și stocare de date, algoritmi, simulări virtuale, machine learning',
+    'Experiment: Metodele experimentale implică rularea de simulări pentru a testa ipoteze sau a observa comportamentul unor sisteme complexe',
+    'Design: Proiectarea de modele matematice și computaționale care descriu fenomene reale',
   ],
   'Relații cu alte subdomenii': [
-    'Programare: Scrierea și organizarea codului, gestionarea complexității pe termen lung',
-    'Baze de date: Gestionarea volumului masiv de date',
-    'Rețele și sisteme distribuite: Conectivitatea și scalabilitatea aplicațiilor',
-    'Inteligență Artificială (AI): Integrarea AI în aplicații și automatizarea proceselor de dezvoltare',
+    'Arhitectura Calculatoarelor: Nevoia de componente performante pentru calcule, analiza și stocarea de date masive și proiectarea de simulări 3D.',
+    'Algoritmi și Structuri de Date: Eficiența algoritmilor folosiți în analiza datelor, proiectarea simulărilor etc.',
+    'Inteligență Artificială și Machine Learning: Utilizarea AI pentru dezvoltarea modelelor predictive, analizarea de seturi mari de date și optimizarea algoritmilor.',
+    'Baze de Date: Gestionarea și stocarea datelor generate de simulări',
+    'Grafică pe Calculator: Simulări vizuale pentru experimente',
+    'Bioinformatică: Analiza genomică, plierea proteinelor, descoperirea de medicamente',
   ],
   'Probleme importante și deschise': [
-    'Complexitatea și scalabilitatea sistemelor software',
-    'Calitatea, fiabilitatea și securitatea software-ului',
-    'Programarea asistată de AI: Unelte AI pentru generarea automată de cod',
-    'DevOps: Automatizare și livrare rapidă a aplicațiilor',
+    'Scalabilitatea algoritmilor pentru calcul de înaltă performanță (HPC)',
+    'Incertitudinea și validarea modelelor computaționale',
+    'Simularea cuantică a sistemelor moleculare',
+    'Reprezentarea și simularea materialelor topologice exotice',
   ],
   'Persoane importante': [
-    'Ian Sommerville – autorul cărții "Software Engineering".',
-    'Kent Beck – fondator al metodologiilor XP și TDD.',
+    'John von Neumann: Matematician și informatician, contribuții fundamentale la arhitectura calculatoarelor și la dezvoltarea primelor simulări numerice',
+    'Alan Turing: Matematician și logician, cunoscut pentru contribuțiile în informatica teoretică și inteligența artificială',
   ],
-  'Foruri importante': [
-    'IEEE Software Engineering Technical Council.',
-    'ACM SIGSOFT (Special Interest Group on Software Engineering).',
-    'Conferințele ICSE, FSE, ESEC.',
+  'Forumuri importante': [
+    'SIAM Journal on Scientific Computing (https://epubs.siam.org/journal/sisc)',
+    'Journal of Computational Physics (https://www.sciencedirect.com/journal/journal-of-computational-physics)',
+    'The International Conference for High Performance Computing (https://sc25.supercomputing.org/)',
+    ' SIAM Conference on Computational Science and Engineering (https://www.siam.org/conferences/cm/cse-2025)',
   ],
   'Dimensiune locală și globală': [
-    'Florin Spătaru - Distributed Computing; Scheduling Algorithms; Blockchain',
     'Cosmin Bonchiș - Information theory, Membrane computing, Parallel and distributed computing',
-    'Centre de excelență: Carnegie Mellon – SEI, ETH Zurich',
-    'Proiecte internaționale: „Software Engineering for AI-driven Systems”',
+    'Daniela Zaharie - Evolutionary computing, Machine learning, Data mining',
+    'MOISE - Modernizarea infrastructurii de calcul și stocare a Centrului de Cercetare în Informatică al UVT',
+    'Swiss National Supercomputing Centre (CSCS) - https://www.cscs.ch/',
+    'PRACE (Partnership for Advanced Computing in Europe) - https://prace-ri.eu/',
   ],
 };
 
@@ -207,7 +211,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Știința computațională se ocupă cu dezvoltarea și aplicarea metodelor numerice, algoritmilor și simulărilor pentru a înțelege fenomene complexe. Este o punte între matematică, informatică și științele aplicate, fiind esențială în domenii precum fizica computațională, dinamica fluidelor, biologia sistemică sau inteligența artificială.']
+              ? ['Știința computațională reprezintă o ramură a informaticii ce folosește calculatoarele și algoritmii pentru a rezolva probleme complexe din diverse domenii precum fizica, biologia, medicina, economia și ingineria, interpretate sub formă de ecuații matematice și simulări pe calculator.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li
