@@ -58,8 +58,8 @@ const contentMap: Record<string, string[]> = {
     'UIST (User Interface Software and Technology) - https://uist.acm.org'
   ],
   'Dimensiune locală și globală': [
-    'Lect. Dr. Liviu Octavian Mafteiu-Scai - Coordonează echipe de studenți în cadrul Concursului de Informatică Ștefan Mărușter și participă la dezvoltarea de aplicații interactive. Este implicat în cercetări privind algoritmi metaeuristici și optimizarea interfețelor utilizator.',
-    'Lect. Dr. Cosmin Bonchiș - Specializat în grafică și interfețe utilizator, contribuie la proiecte interdisciplinare axate pe interacțiunea om-calculator și educație asistată digital. A fost implicat în dezvoltarea unui simulator web pentru sisteme P.',
+    'Lect. Dr. Alin Brîndușescu - Specializat în interacțiunea om-calculator, titular al cursului „Introducere în neurotehnologii”, contribuie la proiecte interdisciplinare axate pe interacțiunea om-calculator și educație digitală. A fost implicat în dezvoltarea de aplicații care integrează neurotehnologii și interfețe creier-computer (BCI).',
+    'Conf. Dr. Marc Eduard Frîncu - Specializat în grafică și interfețe utilizator, titular al cursului „Computer Graphics and User Interfaces”, contribuie la proiecte interdisciplinare axate pe interacțiunea om-calculator și educație digitală. A fost implicat în dezvoltarea de aplicații VR pentru vizualizarea patrimoniului cultural.',
     'MIT Media Lab - cercetare de vârf în interfețe inovatoare și experiențe interactive.',
     'Carnegie Mellon University - HCI Institute - unul dintre cele mai prestigioase centre de cercetare din lume.',
     'Horizon Europe: Augmented Reality for Smart Education.',

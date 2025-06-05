@@ -76,7 +76,7 @@ const studenti = [
   { nume: 'Vasiliu Andrei', domeniu: 'Arhitectură' }, //
   { nume: 'Gramescu-Calin Catalin', domeniu: 'Sisteme de operare și rețele' }, //
   { nume: 'Hac Filip', domeniu: 'Inginerie software' }, //
-  { nume: 'Todoran Paul', domeniu: 'Baze de date și regăsire de informații' },
+  { nume: 'Todoran Paul-Teodor', domeniu: 'Baze de date și regăsire de informații' },
   { nume: 'Vasiescu Adrian-Damian', domeniu: 'AI și robotică' },
   { nume: 'Ursu Mihai Sebastian', domeniu: 'Grafică' },
   { nume: 'Stepan Alexandru-Pavel', domeniu: 'Interacțiune om-computer' },

@@ -27,35 +27,44 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': [
-    'Modelare: Entități, atribute și relații între tabele.',
-    'Stocare: Optimizarea modului în care datele sunt salvate și indexate.',
-    'Regăsire: Interogări SQL eficiente și gestionarea tranzacțiilor.',
+    'Teorie: Modele de date (relațional, orientat pe obiect, documente), algebră relațională, limbaje formale de interogare (SQL, Datalog), complexitatea interogărilor, modele informaționale.',
+    'Experiment: Optimizarea interogărilor, evaluarea performanței sistemelor de baze de date (ex: costul planurilor de execuție), testarea sistemelor de regăsire a informației.',
+    'Design: Proiectarea schemelor de baze de date, normalizarea, sisteme de indexare, sisteme distribuite de baze de date, sisteme de regăsire a informației și motoare de căutare.',
   ],
   'Relații cu alte subdomenii': [
-    'Programare: Interacțiunea aplicației cu baza de date.',
-    'Sisteme de operare: Gestionarea memoriei și proceselor.',
-    'Inteligență Artificială: Procesarea și învățarea din volume mari de date.',
-    'Rețele: Baze de date distribuite și replicare.',
+    'Inginerie software: Baze de date ca infrastructură pentru aplicații software complexe.',
+    'Sisteme distribuite: Baze de date distribuite, replicare și consistență.',
+    'Inteligență Artificială: Regăsirea semantică, integrarea cu ontologii și machine learning pentru clasificare/recomandare.',
+    'Securitate informatică: Protecția datelor, controlul accesului, confidențialitate.',
+    'Teoria informației: Codare, compresie și relevanță informațională.'
   ],
   'Probleme importante și deschise': [
-    'Scalabilitate și performanță în baze de date mari.',
-    'Securitatea accesului și criptarea datelor.',
-    'Consistența în baze de date distribuite.',
-    'Optimizarea interogărilor și a indexurilor.',
+    'Stocarea și interogarea eficientă a volumelor mari de date (Big Data)',
+    'Optimizarea automată a interogărilor și execuției',
+    'Garanții de consistență și disponibilitate în sisteme distribuite',
+    'Regăsire semantică: Cum înțelege o mașină sensul unei întrebări și oferă răspunsuri relevante?',
+    'Baze de date autonome: Sisteme care se configurează, repară și optimizează singure.',
+    'Interogare peste date eterogene: Cum interogăm în mod unificat date din surse diferite (SQL, NoSQL, XML, RDF)?',
+    'Confidențialitate cuplat cu utilitate: Cum păstrăm confidențialitatea fără a compromite valoarea datelor?'
   ],
   'Persoane importante': [
-    'Edgar F. Codd – părintele modelului relațional.',
-    'Michael Stonebraker – dezvoltatorul sistemului PostgreSQL.',
+    'Jim Gray - Laureat Turing, contribuții fundamentale în baze de date tranzacționale.',
+    'Jeffrey Ullman - Teoretician influent în modele de date și algebră relațională.',
+    'Serge Abiteboul - Regăsire de informații, web semantice și baze de date semi-structurate.'
   ],
-  'Foruri importante': [
-    'ACM SIGMOD (Management of Data).',
-    'VLDB Endowment (Very Large Data Bases).',
-    'Conferințele ICDE, SIGMOD, VLDB.',
+  'Forumuri importante': [
+    'ACM Transactions on Database Systems (TODS)',
+    'Information Retrieval Journal',
+    'ACM SIGMOD Conference',
+    'VLDB (Very Large Data Bases)',
+    'ACM SIGIR (pentru regăsire de informații)'
   ],
   'Dimensiune locală și globală': [
-    'Lucian Vintan – contribuții în baze de date și sisteme inteligente.',
-    'Colaborări europene în domeniul Big Data și Data Lakes.',
-    'Inițiative globale pentru interoperabilitatea datelor.',
+    'Domeniul este profund conectat cu bioinformatica (baze de date genomice), lingvistica computațională (regăsirea semantică) și științele sociale (analiza rețelelor sociale prin baze de date graf).',
+    'StudentWeb - Platforma principală a UVT pentru gestionarea informațiilor academice și financiare ale studenților. Accesează o bază de date instituțională centralizată pentru afișarea situației școlare, a contractelor de studii și a datelor personale.',
+    'eLearning UVT (Moodle) - Sistemul de management al învățării utilizat de cadrele didactice și studenți. Se bazează pe o bază de date relațională care stochează cursuri, activități, rezultate și interacțiuni educaționale.',
+    'Stanford InfoLab (SUA) - renumit pentru cercetare în baze de date relaționale, baze de date graf și motoare de căutare. Gazdă a proiectului PageRank (baza Google).',
+    'PostgreSQL, MongoDB, Neo4j - sisteme moderne de baze de date folosite atât în industrie cât și în cercetare, fiecare cu paradigme diferite (relațional, document, graf).',
   ],
 };
 
@@ -224,7 +233,7 @@ export default function SubjectPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Baza de date reprezintă un sistem organizat pentru stocarea, gestionarea și regăsirea eficientă a informației. Se bazează pe modele relaționale, tabele, interogări SQL și structuri optimizate pentru performanță și integritate.']
+              ? ['Baze de date și regăsire de informații este un subdomeniu esențial al informaticii care se ocupă cu organizarea, stocarea, manipularea și regăsirea eficientă a datelor. Acest domeniu permite gestionarea volumelor mari de date în mod sigur, performant și scalabil, fiind indispensabil în contextul aplicațiilor moderne, sistemelor informatice și inteligenței artificiale. Acesta se încadrează în categoria „Information Management” conform clasificărilor ACM/IEEE și în „Data and Information Systems” conform articolului lui Peter Denning - Computer Science: the Discipline.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li

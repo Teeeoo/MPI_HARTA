@@ -21,12 +21,47 @@ const headings = [
 ];
 
 const contentMap: Record<string, string[]> = {
-  'Activități principale': [],
-  'Relații cu alte subdomenii': [],
-  'Probleme importante și deschise': [],
-  'Persoane importante': [],
-  'Forumuri importante': [],
-  'Dimensiune locală și globală': [],
+  'Activități principale': ['Teorie: geometrie computațională, modelarea matematică, algoritmi de randare, teoria culorii și spații de culoare, teoria eșantionării și reconstrucției, sisteme procedurale, fizica lumini și materialelor.',
+    'Experiment: Validarea tehnicilor prin simulări, benchmark-uri și analiză cantitativă(testarea performanței, evaluarea calității vizuale, studii de percepție umană)',
+    'Design: Proiectarea soluțiilor vizuale eficiente, scalabile și ușor de întreținut, arhitecturi de randare, design procedural, standardizare și interoperabilitat'
+
+  ],
+  'Relații cu alte subdomenii': [
+    'Algoritmi și structuri de date: Grafica digitală se bazează pe algoritmi eficienți și pe structuri de date optimizate.',
+    'Limbaje de programare: Implementarea tehnicilor grafice se face în limbaje de nivel înalt, dar și în limbaje specializate pentru GPU.',
+    'Arhitectura: arhitectura GPU-urilor, memorie video, paralelism masiv. Fără hardware dedicat, nu există randare în timp real.',
+    'Sisteme de operare și rețele: gestionează memoria grafică, sincronizează firele de execuție și coordonează procesele grafice prin drivere și API-uri specializate.',
+    'Interacțiune om-computer: Interfețele grafice și realitatea augmentată/virtuală depind de o reprezentare intuitivă și estetică a informației.',
+    'Baze de date: Texturi, modele 3D, animații și materiale sunt organizate în baze de date pentru acces eficient și reutilizare.',
+    'Inteligență Artificială: generare de conținut grafic realist, optimizarea randării, animații automate.',
+  ],
+  'Probleme importante și deschise': [
+    'Performanța și optimizarea graficii',
+    'Realismul vizual',
+    'Sincronizarea și paralelismul în randare',
+    'Randare realistă în timp real',
+    'Grafică asistată de AI',
+    'Simularea fizicii și a naturii realiste la cost redus',
+  ],
+  'Persoane importante': [
+    'Ivan Sutherland - creatorul Sketchpad, primul sistem interactiv de grafică; pionier al interfețelor vizuale.',
+    'Edwin Catmull - inventatorul Z-buffer-ului, a dezvoltat tehnici de texturare și anti-aliasing în animația 3D.',
+    'Pat Hanrahan - co-creator RenderMan, a dezvoltat limbaje de shadere și instrumente pentru vizualizare științifică.	'
+  ],
+  'Forumuri importante': [
+    'IEEE Transactions on Visualization and Computer Graphics (TVCG): https://ieeexplore.ieee.org/xpl ',
+    'ACM Transactions on Graphics (TOG): https://dl.acm.org/journal/tog',
+    'Graphics Interface: https://graphicsinterface.org',
+    'ACM SIGGRAPH: https://s2025.siggraph.org'
+  ],
+  'Dimensiune locală și globală': [
+    'Marc Frîncu - Big Data, Distributed Systems, Cultural heritage visualization, XR, Graphics and user interfaces',
+    'Sebastian-Aurelian Ștefănigă - Medical Image Processing, Computer Vision, HPC Computing, Artificial Intelligence, Machine Learning, Statistics',
+    'Raluca Mureșan -  Applied Math, Dynamical Systems, Stability Theory, Evolution Equations',
+    'Dana Petcu - Distributed/Parallel Computing',
+    'Centre de excelență: MIT Media Lab, Stanford University, ETH Zurich',
+    'Proiecte internaționale: „Machine Learning Denoiser”, “Open3D“, “Vulkan”'
+  ],
 };
 
 type StarData = {
@@ -180,7 +215,7 @@ export default function GraphicsPage() {
           </h3>
           <ul style={{ paddingLeft: '0', listStyle: 'none' }}>
             {(activeIndex === -1
-              ? ['Grafica pe calculator se ocupă cu generarea și manipularea imaginilor, scenelor 3D și animațiilor cu ajutorul algoritmilor și tehnologiilor software.']
+              ? ['Grafica digitală este ramura informaticii care se ocupă cu generarea, procesarea și reprezentarea vizuală a datelor folosind calculatoarele. Computerul este utilizat pentru sintetizarea, modificarea, stocarea și managementul imaginilor, precum și pentru prelucrarea informației vizuale obținute din realitatea înconjurătoare.']
               : contentMap[headings[activeIndex]]
             )?.map((point, i) => (
               <li
