@@ -22,8 +22,8 @@ const headings = [
 
 const contentMap: Record<string, string[]> = {
   'Activități principale': ['Teorie: geometrie computațională, modelarea matematică, algoritmi de randare, teoria culorii și spații de culoare, teoria eșantionării și reconstrucției, sisteme procedurale, fizica lumini și materialelor.',
-    'Experiment: Validarea tehnicilor prin simulări, benchmark-uri și analiză cantitativă(testarea performanței, evaluarea calității vizuale, studii de percepție umană)',
-    'Design: Proiectarea soluțiilor vizuale eficiente, scalabile și ușor de întreținut, arhitecturi de randare, design procedural, standardizare și interoperabilitat'
+    'Experiment: Validarea tehnicilor prin simulări, benchmark-uri și analiză cantitativă (testarea performanței, evaluarea calității vizuale, studii de percepție umană)',
+    'Design: Proiectarea soluțiilor vizuale eficiente, scalabile și ușor de întreținut, arhitecturi de randare, design procedural, standardizare și interoperabilitate'
 
   ],
   'Relații cu alte subdomenii': [
@@ -55,12 +55,12 @@ const contentMap: Record<string, string[]> = {
     'ACM SIGGRAPH: https://s2025.siggraph.org'
   ],
   'Dimensiune locală și globală': [
-    'Marc Frîncu - Big Data, Distributed Systems, Cultural heritage visualization, XR, Graphics and user interfaces',
-    'Sebastian-Aurelian Ștefănigă - Medical Image Processing, Computer Vision, HPC Computing, Artificial Intelligence, Machine Learning, Statistics',
-    'Raluca Mureșan -  Applied Math, Dynamical Systems, Stability Theory, Evolution Equations',
-    'Dana Petcu - Distributed/Parallel Computing',
-    'Centre de excelență: MIT Media Lab, Stanford University, ETH Zurich',
-    'Proiecte internaționale: „Machine Learning Denoiser”, “Open3D“, “Vulkan”'
+    'Găianu Mihail - Digital Image Processing, Computational Geometry, Computer Graphics, Tomographic Reconstruction, Image Reconstruction, GPU Programming, 3D Reconstruction, Computer Vision',
+    'Marc Frîncu - Big Data, Distributed Systems, XR, Graphics and user interfaces',
+    'Sebastian-Aurelian Ștefănigă - Computer Vision, HPC Computing, Artificial Intelligence, Machine Learning, Statistics',
+    'Raluca Mureșan - Dynamical Systems, Evolution Equations',
+    'Eva Kaslik - Dynamical Systems, Fractional-order systems, mathematical modelling',
+    'Dana Petcu - Distributed/Parallel Computing, Computer Graphics'
   ],
 };
 

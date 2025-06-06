@@ -55,7 +55,7 @@ const contentMap: Record<string, string[]> = {
     'Wikipedia - Von Neumann architecture'
   ],
   'Dimensiune locală și globală': [
-    'Florin Spătaru - Arhitecturi distribuite, algoritmi de planificare',
+    'Liviu Mafteiu-Scai - Conf. univ. dr., specialist în arhitectura calculatoarelor, rețele de calculatoare și sisteme embedded. Predă cursuri fundamentale de arhitectură și proiectarea sistemelor hardware.',
     'Cosmin Bonchiș - Calcul paralel, arhitecturi neconvenționale',
     'Carnegie Mellon, ETH Zürich - Centre de cercetare de top',
     'Proiecte internaționale: Arhitecturi pentru AI și cloud computing'
